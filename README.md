@@ -5,10 +5,11 @@ This lab is provided as part of [AWS Innovate Data Edition](https://aws.amazon.c
 
 ## Table of Contents  
 [Overview](#overview)  
-[Architecture](#architecture) 
-[Pre-Requisites](#pre-Requisites)
-[Setup an Amazon Kinesis Data Generator](#setup-an-amazon-kinesis-data-generator)
-[Login to KDG](#login-to-kdg)
+[Architecture](#architecture)  
+[Pre-Requisites](#pre-Requisites)  
+[Setup an Amazon Kinesis Data Generator](#setup-an-amazon-kinesis-data-generator)  
+[Login to KDG](#login-to-kdg)  
+
 
 
 
@@ -75,12 +76,14 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
 2. Sign in using the username and password you enetered in the CloudFormation console.
 ![KDGLogin](./images/KDGLogin.png)
 3. After you sign in, you should see the KDG console. You need to set up some templates to mimic the clickstream web payload.
-4. Create the following templates. But do not click on the 'Send Data' yet:
-   |**Template Name**|**Payload**|
-   | --- | --- |
-   |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |
-   |```Click Payload``` | ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |
-   |```Impression Payload``` | ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |
+4. Create the following templates in the KDG console. But do not click on the 'Send Data' yet:
+   |**Records per Second**|**Template Name**|**Payload**|**Description**|
+   | --- | --- | --- | --- |
+   | 1 |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |Payload used for schema discovery|
+   | 1 |```Click Payload``` | ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Payload used for clickstream data|
+   | 1 |```Impression Payload``` | ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |Payload used for impression stream data|
+![KDGTemplateSetup](./images/KDGTemplateSetup.png)
+
  
 ## Setup an Analytics Pipeline Application
 1.  
