@@ -3,6 +3,15 @@ This lab is provided as part of [AWS Innovate Data Edition](https://aws.amazon.c
 
 ℹ️ You will run this lab in your own AWS account and running this lab will incur some costs. Please follow directions at the end of the lab to remove resources to avoid future costs.
 
+## Table of Contents  
+[Overview](#overview)  
+[Architecture](#architecture) 
+[Pre-Requisites](#pre-Requisites)
+[Setup an Amazon Kinesis Data Generator](#setup-an-amazon-kinesis-data-generator)
+[Login to KDG](#login-to-kdg)
+
+
+
 ## Overview
 This lab helps you to use Kinesis Data Analytics to perform Real-Time Clickstream Anomaly Detection. Amazon Kinesis Data Analytics is a managed service that makes it easy to analyse web log traffic that drive business decisions in real-time.
 
@@ -45,7 +54,7 @@ Note:
 * While the stack runs, watch out for an email as below.
 ![EmailSubscription](./images/EmailSubscription.png)
 * Confirm the subscription to receive the below message.
-![EmailSubscriptionConfirmation](./images/EmailSubscription.png)
+![EmailSubscriptionConfirmation](./images/EmailSubscriptionConfirmation.png)
 * Once the stack is deployed, click the outputs tab to view more information.
     * **KinesisDataGeneratorUrl** - This value is the Kinesis Data Generator (KDG) URL.
     * **RawBucketName** - Store raw data coming from KDG.
@@ -65,6 +74,13 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
 1. Click on the KinesisDataGeneratorUrl on the Outputs tab on the stack.
 2. Sign in using the username and password you enetered in the CloudFormation console.
 ![KDGLogin](./images/KDGLogin.png)
-
+3. After you sign in, you should see the KDG console. You need to set up some templates to mimic the clickstream web payload.
+4. Create the following templates. But do not click on the 'Send Data' yet:
+   |**Template Name**|**Payload**|
+   | --- | --- |
+   |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |
+   |```Click Payload``` | ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |
+   |```Impression Payload``` | ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |
+ 
 ## Setup an Analytics Pipeline Application
-1. 
+1.  
