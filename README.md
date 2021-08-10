@@ -109,7 +109,7 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
     * Leave the 'Use discovered schema' option selected for 'Schema options' and click on Save changes. The source stream should show as below:
             ![source-da](./images/source-da.png)
     * Now navigate to the 'Real-time analytics' tab and click on Configure.
-    * Replace the sql with the contents of the following file: ![anomaly_detection.sql](https://aws-dataengineering-day.workshop.aws/300/scripts/Kinesis_Anlaytics_anomaly_detection.sql) and click on 'Save and run application'. This should take a minute to run.
+    * Replace the sql with the contents of the following file: [anomaly_detection.sql](https://aws-dataengineering-day.workshop.aws/300/scripts/Kinesis_Anlaytics_anomaly_detection.sql) and click on 'Save and run application'. This should take a minute to run.
             ![rtanalyticssql](./images/rtanalyticssql.png)
     
     * On the same page scroll down to view the Input and Output sub tab. The Input sub tab will list the source stream and the Output sub-tab will display the output streams created by the SQL run before.
