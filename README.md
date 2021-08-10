@@ -4,14 +4,14 @@ This lab is provided as part of [AWS Innovate Data Edition](https://aws.amazon.c
 ℹ️ You will run this lab in your own AWS account and running this lab will incur some costs. Please follow directions at the end of the lab to remove resources to avoid future costs.
 
 ## Table of Contents  
-[Overview](#overview)  
-[Architecture](#architecture)  
-[Pre-Requisites](#pre-Requisites)  
-[Setting up Amazon Kinesis Data Generator Tool](#setting-up-amazon-kinesis-data-generator-tool)  
-[Kinesis Analytics Pipeline Application setup](#kinesis-analytics-pipeline-application-setup)
-[Configure Output stream to a Destination](#configure-output-stream-to-a-destination)
-[Test E2E Architecture](#test-e2e-architecture)
-[Cleanup](#cleanup)
+* [Overview](#overview)  
+* [Architecture](#architecture)  
+* [Pre-Requisites](#pre-Requisites)  
+* [Setting up Amazon Kinesis Data Generator Tool](#setting-up-amazon-kinesis-data-generator-tool)  
+* [Kinesis Analytics Pipeline Application setup](#kinesis-analytics-pipeline-application-setup)
+* [Configure Output stream to a Destination](#configure-output-stream-to-a-destination)
+* [Test E2E Architecture](#test-e2e-architecture)
+* [Cleanup](#cleanup)
 
 
 ## Overview
@@ -117,8 +117,8 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
 
 At this point you have created:
 * Kinesis Data Analytics application schema for click stream and impression stream data using the 'Schema Discovery Payload' sent from the KDG tool
-* You have also created an output stream schema, using ![anomaly_detection.sql](https://aws-dataengineering-day.workshop.aws/300/scripts/Kinesis_Anlaytics_anomaly_detection.sql). The schema will in real-time convert the input stream to the output stream.
-* The DESTINATION_SQL_STREAM uses the RANDOM_CUT_FOREST function to detect anomalies within the input data stream. You can read more about the function ![here](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sqlrf-random-cut-forest.html).
+* You have also created an output stream schema, using [anomaly_detection.sql](https://aws-dataengineering-day.workshop.aws/300/scripts/Kinesis_Anlaytics_anomaly_detection.sql). The schema will in real-time convert the input stream to the output stream.
+* The DESTINATION_SQL_STREAM uses the RANDOM_CUT_FOREST function to detect anomalies within the input data stream. You can read more about the function [here](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sqlrf-random-cut-forest.html).
 
 
 ## Configure Output stream to a Destination
@@ -141,8 +141,8 @@ This section tests the end to end architecture. The KDG tool is configured to se
 1. To send in the click and impression data we will need to login to the KDG tool in 5 tabs and Send data to the Kinesis data stream firehose based on the table below
     |**Tab**|**Payload**|**Records per Second**|**Notes**
     | --- | --- | --- | --- |
-    |1|Impression|1||
-    |2|Click|1||
+    |1|Impression|1|Can leave running|
+    |2|Click|1|Can leave running|
     |3|Click|1|Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
     |4|Click|1|Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
     |5|Click|1|Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
@@ -163,11 +163,3 @@ Follow the below steps to cleanup your account to prevent any aditional charges:
 * Navigate to the CloudFormation and find the stack that was deployed as part of the pre-requisites.
 * Select the stack and delete. This action will delete all the resources that were created as part of the lab and stop incurring charges.
             ![deletedeployedstack](./images/deletedeployedstack.png)
-
-
-    
-
-
-
-
-
