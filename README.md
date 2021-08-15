@@ -1,5 +1,7 @@
 # Real-Time Clickstream Anomaly Detection Kinesis Analytics
-This lab is provided as part of [AWS Innovate Data Edition](https://aws.amazon.com/events/aws-innovate/data/), click here to explore the full list of hands-on labs.
+
+This lab is provided as part of **[AWS Innovate Data Edition](https://aws.amazon.com/events/aws-innovate/data/)**,  it has been adapted from an [AWS Workshop](https://aws-dataengineering-day.workshop.aws/300/320-main-lab.html)
+Click [here](https://github.com/phonghuule/aws-innovate-data) to explore the full list of hands-on labs.
 
 ℹ️ You will run this lab in your own AWS account and running this lab will incur some costs. Please follow directions at the end of the lab to remove resources to avoid future costs.
 
