@@ -126,10 +126,10 @@ At this point you have created:
 
 Note: The DESTINATION_SQL_STREAM uses the RANDOM_CUT_FOREST function to detect anomalies within the input data stream. You can read more about the function [here](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sqlrf-random-cut-forest.html).
 
-
 ## Configure Output stream to a Destination
 The DESTINATION_SQL_STREAM output stream contains records where anomalies have been found and need to be reported. In this section we will configure a new destination (a lambda function) to direct the anomalies to an SNS Topic.
-1. In the output subtab click on 'Connect to destination'.
+1. Stop sending data configured in the previous [step](#setting-up-amazon-kinesis-data-generator-tool).
+2. In the output subtab click on 'Connect to destination'.
             ![outputconnecttodest](./images/outputconnecttodest.png)
 2. Select 'AWS Lambda function' as a destination and browse for the Lamdba function,**CSEBeconAnomalyResponse**, created by the CloudFormation template with version set as $LATEST.
 3. For Access Permissions, select 'Choose from IAM roles that Kinesis Data Analytics can assume' and select  **{stack-name}-CSEKinesisAnalyticsRole-{random-string}** as the service role.
