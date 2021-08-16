@@ -51,7 +51,7 @@ Note:
 * The CloudFormation stack takes the following parameters as input:
     |Parameter|Description|
     | --- | --- |
-    |Username|User name for the KDG tool. This will be a user in the Amazon Cognito|
+    |Username|User name for the KDG tool. Enter ```kplsetup```. This will be a user in the Amazon Cognito|
     |Password|Password for the user in Amazon Cognito|
     |Email|The email address to send anomaly events|
     |SMS|The mobile phone number to send anomaly events|
