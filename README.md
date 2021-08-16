@@ -122,8 +122,9 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
 
 At this point you have created:
 * Kinesis Data Analytics application schema for click stream and impression stream data using the 'Schema Discovery Payload' sent from the KDG tool
-* You have also created an output stream schema, using [anomaly_detection.sql](https://aws-dataengineering-day.workshop.aws/300/scripts/Kinesis_Anlaytics_anomaly_detection.sql). The schema will in real-time convert the input stream to the output stream.
-* The DESTINATION_SQL_STREAM uses the RANDOM_CUT_FOREST function to detect anomalies within the input data stream. You can read more about the function [here](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sqlrf-random-cut-forest.html).
+* An output stream schema, using [anomaly_detection.sql](https://aws-dataengineering-day.workshop.aws/300/scripts/Kinesis_Anlaytics_anomaly_detection.sql). The schema will in real-time convert the input stream to the output stream.
+
+Note: The DESTINATION_SQL_STREAM uses the RANDOM_CUT_FOREST function to detect anomalies within the input data stream. You can read more about the function [here](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sqlrf-random-cut-forest.html).
 
 
 ## Configure Output stream to a Destination
