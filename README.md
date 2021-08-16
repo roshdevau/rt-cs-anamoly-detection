@@ -92,7 +92,7 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
 
  
 ## Kinesis Analytics Pipeline Application setup
-1. Navigate to the Amazon Kinesis console
+1. Navigate to the [Amazon Kinesis](https://ap-southeast-2.console.aws.amazon.com/kinesis/home?region=ap-southeast-2#/home) console
 2. On the Get Started portlet, select Kinesis Data Analytics, and click on Create Application.
      ![KinesisDataAnalyticsGetStarted](./images/KinesisDataAnalyticsGetStarted.png)
 3. On the Kinesis Data Analytics - Create application page:
