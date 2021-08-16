@@ -42,7 +42,6 @@ The lab uses the Kinesis Data Generator (KDG) tool to generate data and sends it
 The below cloudformation template deploys the lab pre-requisites in your AWS account. 
 Note:
 * The stack selects the Asia Pacific(Sydney) for deployment, please alter the region as required.
-* Acknowledge that the CloudFormation might create IAM resources
 * Deploy stack
 
     | Region | CloudFormation |
@@ -57,6 +56,7 @@ Note:
     |Email|The email address to send anomaly events|
     |SMS|The mobile phone number to send anomaly events|
 
+* Acknowledge that the CloudFormation might create IAM resources
 * While the stack runs, watch out for an email as below.
 ![EmailSubscription](./images/EmailSubscription.png)
 * Confirm the subscription to receive the below message.
