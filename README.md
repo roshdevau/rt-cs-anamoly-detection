@@ -142,7 +142,7 @@ The DESTINATION_SQL_STREAM output stream contains records where anomalies have b
 This section tests the end to end architecture. The KDG tool is configured to send Impression and multiple click stream data to imitate an anomaly. The Kinesis Data Analytics application detects anomalies and sends these anomalies to the Lamdba function. The Lamdba function then sends a notification to an SNS topic and in turn to an email and an sms.
 **Note:** Stop data the click stream data after 20-30 seconds to prevent a large number of sms being sent.
 
-1. To send in the click and impression data we will need to login to the KDG tool in 5 tabs and Send data to the Kinesis data stream firehose based on the table below
+1. To send in the click and impression data we will need to login to the KDG tool in **5 tabs** and Send data to the Kinesis data stream firehose based on the table below. **Note:** Follow notes for Tab 3,4,5 to prevent excess notifications:
     |**Tab**|**Template**|**Records per Second**|**Payload**|**Notes**
     | --- | --- | --- | --- | --- |
     |1|Impression|1| ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |Can leave running|
@@ -151,12 +151,6 @@ This section tests the end to end architecture. The KDG tool is configured to se
     |4|Click|1| ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
     |5|Click|1| ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
     
-       | 1 |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |Payload used for schema discovery|
-   | 1 |```Click Payload``` | ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Payload used for clickstream data|
-   | 1 |```Impression Payload``` | ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |Payload used for impression stream data|
-
-
-
 2. With the KDG tool sending data to Kinesis, the input data can be viewed in the AWS Console.
             ![inputclickimpressionstream](./images/inputclickimpressionstream.png)
 4. Similarly the data can be viewed in the output data stream. E.g. IMPRESSIONSTREAM, CLICKSTREAM. DESTINATION_SQL_STREAM. 
