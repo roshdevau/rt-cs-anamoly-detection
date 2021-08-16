@@ -143,13 +143,20 @@ This section tests the end to end architecture. The KDG tool is configured to se
 **Note:** Stop data the click stream data after 20-30 seconds to prevent a large number of sms being sent.
 
 1. To send in the click and impression data we will need to login to the KDG tool in 5 tabs and Send data to the Kinesis data stream firehose based on the table below
-    |**Tab**|**Payload**|**Records per Second**|**Notes**
-    | --- | --- | --- | --- |
-    |1|Impression|1|Can leave running|
-    |2|Click|1|Can leave running|
-    |3|Click|1|Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
-    |4|Click|1|Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
-    |5|Click|1|Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
+    |**Tab**|**Template**|**Records per Second**|**Payload**|**Notes**
+    | --- | --- | --- | --- | --- |
+    |1|Impression|1| ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |Can leave running|
+    |2|Click|1| ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Can leave running|
+    |3|Click|1| ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
+    |4|Click|1| ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
+    |5|Click|1| ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Stop after 20-30 seconds to prevent large number of emails and sms from SNS Topic|
+    
+       | 1 |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |Payload used for schema discovery|
+   | 1 |```Click Payload``` | ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Payload used for clickstream data|
+   | 1 |```Impression Payload``` | ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |Payload used for impression stream data|
+
+
+
 2. With the KDG tool sending data to Kinesis, the input data can be viewed in the AWS Console.
             ![inputclickimpressionstream](./images/inputclickimpressionstream.png)
 4. Similarly the data can be viewed in the output data stream. E.g. IMPRESSIONSTREAM, CLICKSTREAM. DESTINATION_SQL_STREAM. 
