@@ -87,7 +87,8 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
    | 1 |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |Payload used for schema discovery|
    | 1 |```Click Payload``` | ```  {"browseraction":"Click", "site": "yourwebsiteurl.domain.com"} ``` |Payload used for clickstream data|
    | 1 |```Impression Payload``` | ```  {"browseraction":"Impression", "site": "yourwebsiteurl.domain.com"}``` |Payload used for impression stream data|
-   ![KDGTemplateSetup](./images/KDGTemplateSetup.png)
+   
+![KDGTemplateSetup](./images/KDGTemplateSetup.png)
 
  
 ## Kinesis Analytics Pipeline Application setup
