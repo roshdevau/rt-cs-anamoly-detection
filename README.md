@@ -79,8 +79,9 @@ The KDG simplifies the task of generating data and sending it to Amazon Kinesis.
 1. Click on the KinesisDataGeneratorUrl on the Outputs tab on the stack.
 2. Sign in using the username and password you enetered in the CloudFormation console.
 ![KDGLogin](./images/KDGLogin.png)
-3. After you sign in, you should see the KDG console. You need to set up some templates to mimic the clickstream web payload.
-4. Create the following templates in the KDG console. But do not click on the 'Send Data' yet:
+3. After you sign in, you should see the KDG console. Select the region where the stack was deployed. e.g. ap-southeast-2.
+4. You need to set up some templates to mimic the clickstream web payload.
+5. Create the following templates in the KDG console. But do not click on the 'Send Data' yet:
    |**Records per Second**|**Template Name**|**Payload**|**Description**|
    | --- | --- | --- | --- |
    | 1 |```Schema Discovery Payload``` | ```  {"browseraction":"DiscoveryKinesisTest", "site": "yourwebsiteurl.domain.com"}``` |Payload used for schema discovery|
