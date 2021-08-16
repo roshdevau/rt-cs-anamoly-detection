@@ -131,12 +131,10 @@ Note: The DESTINATION_SQL_STREAM uses the RANDOM_CUT_FOREST function to detect a
 The DESTINATION_SQL_STREAM output stream contains records where anomalies have been found and need to be reported. In this section we will configure a new destination (a lambda function) to direct the anomalies to an SNS Topic.
 1. In the output subtab click on 'Connect to destination'.
             ![outputconnecttodest](./images/outputconnecttodest.png)
-2. Click on Add Destinations on the Destinations tab.
-            ![destinationsadd](./images/destinationsadd.png)
-3. Select 'AWS Lambda function' as a destination and browse for the Lamdba function,**CSEBeconAnomalyResponse**, created by the CloudFormation template with version set as $LATEST.
-4. For Access Permissions, select 'Choose from IAM roles that Kinesis Data Analytics can assume' and select  **{stack-name}-CSEKinesisAnalyticsRole-{random-string}** as the service role.
+2. Select 'AWS Lambda function' as a destination and browse for the Lamdba function,**CSEBeconAnomalyResponse**, created by the CloudFormation template with version set as $LATEST.
+3. For Access Permissions, select 'Choose from IAM roles that Kinesis Data Analytics can assume' and select  **{stack-name}-CSEKinesisAnalyticsRole-{random-string}** as the service role.
             ![destinationlambda](./images/destinationlambda.png)
-5. For the In-application stream name, select 'Choose an existing in-application stream' and select 'DESTINATION_SQL_STREAM' and leave the Ouput format as JSON. Click on Save Changes.
+4. For the In-application stream name, select 'Choose an existing in-application stream' and select 'DESTINATION_SQL_STREAM' and leave the Ouput format as JSON. Click on Save Changes.
             ![inappstreamname](./images/inappstreamname.png)
             ![lamdadest](./images/lamdadest.png)
 
