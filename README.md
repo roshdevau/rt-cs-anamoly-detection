@@ -14,7 +14,6 @@ Click [here](https://github.com/phonghuule/aws-innovate-data) to explore the ful
 * [Configure Output stream to a Destination](#configure-output-stream-to-a-destination)
 * [Test E2E Architecture](#test-e2e-architecture)
 * [Cleanup](#cleanup)
-* [Survey](#survey)
 
 
 ## Overview
@@ -169,5 +168,3 @@ Follow the below steps to cleanup your account to prevent any aditional charges:
 * Select the stack and delete. This action will delete all the resources that were created as part of the lab and stop incurring charges.
             ![deletedeployedstack](./images/deletedeployedstack.png)
             
-## Survey
-Please help us to provide your feedback [here](https://amazonmr.au1.qualtrics.com/jfe/form/SV_3a6rNirgLrWYRW6?Session=HOL08). Participants who complete the surveys from AWS Innovate Online Conference - Data Edition will receive a gift code for USD25 in AWS credits. AWS credits will be sent via email by 30 September, 2021.
